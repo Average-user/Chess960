@@ -5,4 +5,4 @@ Chess-960
 
 ## [Demo](https://average-user.github.io/Chess-960-generator/)
 
-![](https://github.com/Average-user/Chess-960-generator/blob/master/resources/public/img/demo.png?raw=true)
+![](https://github.com/Average-user/Chess960/blob/master/resources/public/img/demo.png?raw=true)
