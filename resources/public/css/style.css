@@ -21,7 +21,7 @@ table {
 }
 
 .stage {
-    margin: 20px;
+    margin: 10px;
     left: 0;
     right: 0;
     top: 50px;
@@ -37,19 +37,3 @@ table {
     background-color: SlateGray;
     background-repeat: no-repeat;
 }
-
-.NiceButton {
-    margin: 5px;
-    margin-left: 25px;
-    width: 255px;
-    border-radius: 6px;
-    padding: 15px 25.5px;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: SlateGray;
-    color: rgb(10, 10, 10);
-    border: 2px solid SlateGray;
-
-}
-
-

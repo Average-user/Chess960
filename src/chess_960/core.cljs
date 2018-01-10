@@ -41,23 +41,17 @@
                    board (range 8))]
     (into [:table.stage] cells)))
 
-(defn button-render []
-  [:div
-   [:button.NiceButton {:on-click #(do (reset! position (rand-position))
-                                       (swap! board create-board))}
-    "Generate"]]) 
-
 (defn show []
-   [:div
-    [:div {:style {:width "310"
-                   :margin "auto"}
-           :on-click #(do (reset! position (rand-position))
-                          (swap! board create-board))}
-     [:h2 "Who cares about openings?"]
-     [:h3 {:style {:color "#232231"}}
-      (str "Id : " (second @position))]
-     [render-board]
-     [button-render]]])
+  [:div {:style {:width "310"
+                 :margin "auto"}}
+   [:h2 "Who cares about openings?"]
+   [:h3 {:style {:color "#232231"}}
+    (str "Id : " (second @position))]
+   [:div {:on-click #(do (reset! position (rand-position))
+                         (swap! board create-board))}
+    [render-board]]
+   [:h4 {:style {:color "#3F3939"}}
+    "Tuoch the board to generate new positions"]])
 
 (defn run []
   (reagent/render [show]
