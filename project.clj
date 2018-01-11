@@ -1,6 +1,6 @@
 (defproject chess-960 "0.1.0-SNAPSHOT"
   :description "Generator of Fischer Random Chess positions"
-  :url "https://github.com/Average-user/Chess-960-generator"
+  :url "https://github.com/Average-user/Chess960"
   :license {:name "MIT License"}
 
   :min-lein-version "2.7.1"

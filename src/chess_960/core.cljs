@@ -14,6 +14,10 @@
 
 (def board (atom (create-board)))
 
+(defn reload-state []
+  (do (reset! position (rand-position))
+      (swap! board create-board)))
+
 (defn wich-cell? [piece [y x]]
   (let [color (cond (and (even? y) (even? x)) :td.cell-white
                     (and (even? y) (odd? x))  :td.cell-black
@@ -35,24 +39,26 @@
            [color])))
 
 (defn render-board []
-  (let [board @board
-        cells (map #(into [:tr] (map (fn [x h] (wich-cell? x [%2 h]))
+  (let [cells (map #(into [:tr] (map (fn [x h] (wich-cell? x [%2 h]))
                                      % (range 8)))
-                   board (range 8))]
-    (into [:table.stage] cells)))
+                   @board (range 8))]
+    (into [:table] cells)))
 
 (defn show []
-  [:div {:style {:width "310"
-                 :margin "auto"}}
-   [:h2 "Who cares about openings?"]
-   [:h3 {:style {:color "#232231"}}
+  [:div.main
+   [:h2
+    "Who cares about openings?"]
+   [:h3.medium
     (str "Id : " (second @position))]
-   [:div {:on-click #(do (reset! position (rand-position))
-                         (swap! board create-board))}
+   [:div {:on-click reload-state}
     [render-board]]
-   [:h4 {:style {:color "#3F3939"}}
-    "Tuoch the board to generate new positions"]])
-
+   [:h4.soft
+    "Touch the board to generate new positions"]
+   [:a {:href "https://github.com/Average-user/Chess960"
+        :style {:content "url(img/github.png)"
+                :width "32"
+                :height "32"}}]])
+    
 (defn run []
   (reagent/render [show]
                   (js/document.getElementById "app")))
