@@ -1,10 +1,5 @@
 (ns chess-960.randompos)
 
-(declare positions)
-
-(defn rand-position []
-  (rand-nth positions))
-
 (def positions
  [[["N" "B" "B" "R" "Q" "K" "R" "N"] "001"]
   [["B" "R" "K" "N" "R" "N" "Q" "B"] "002"]
