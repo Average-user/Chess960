@@ -30,12 +30,30 @@ table {
 
 .medium {
     color: #232231;
+    margin: 5px;
+}
+
+.title {
+    margin-bottom: 5px;
+}
+
+.id {
+    border: black solid 1px;
+    padding: 1px;
 }
 
 .soft {
     color: #3F3939;
+    margin-top: 10px;
+    margin-bottom: 9px;
 }
 
-.link {
-    color: DarkSlateGray;
+.icon {
+    margin-top: 1px;
+}
+
+.counter {
+    background-color: white;
+    margin: 2px;
+    border: black solid 2px;
 }
